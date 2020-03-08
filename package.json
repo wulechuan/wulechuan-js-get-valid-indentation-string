@@ -1,6 +1,6 @@
 {
     "name": "@wulechuan/get-valid-indentation-string",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "wulechuan <wulechuan@live.com>",
     "description": "This program produces a string that could be used as a single level of indentation in any compute programing language source codes. Or it throws an error if it fails to evaluate such a string. The said string contains either all spaces(spacebar), or all tabs(`'\t'`). But it is not allowed to contain a mix of space and tab.",
     "license": "WTFPL",
