@@ -31,7 +31,7 @@
 
 ### What is it
 
-This program produces a string that could be used as a single level of indentation in any compute programing language source codes. Or throws an error if it fails to evaluate such a string. The said string contains either all spaces(spacebar), or all tabs(`'\t'`). But it is not allowed to contain a mix of space and tab. Note that multiple tabs(`'\t'`) is allowed but not recommended. After all, generally we need only single tab for one level of indentation.
+This program produces a string that could be used as a single level of indentation in any compute programing language source codes. Or it throws an error if it fails to evaluate such a string. The said string contains either all spaces(spacebar), or all tabs(`'\t'`). But it is not allowed to contain a mix of space and tab. Note that multiple tabs(`'\t'`) is allowed but not recommended. After all, generally we need only single tab for one level of indentation.
 
 > **Also note that this program provides no so-called default value.** Because I'm not going to pander any possible "flavour" here, be it 2-spaced, 4-spaced, tabbed, or any kind. Thus, when this program is invoked, a so-called "fallback value" is recommended, in case the "formerly provided value" happens to be an invalid one. You can name the "fallback" value a "default" value if prefer.
 
