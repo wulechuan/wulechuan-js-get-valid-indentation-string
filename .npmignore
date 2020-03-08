@@ -1,0 +1,9 @@
+.vscode
+.eslint*
+.markdownlint*
+.gitignore
+node_modules
+document/**/*.html
+ReadMe*.html
+tests
+git*.sh
