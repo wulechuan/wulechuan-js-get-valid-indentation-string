@@ -47,22 +47,24 @@ npm  i  @wulechuan/get-valid-indentation-string
 
 ### Examples
 
-These codes come from the `./test.js` of this repository.
+These codes come from the `./test.js` of this repository, are good examples.
 
 Checkout the full version of `./test.js` for more details.
 
+The key parts are extracted below, as quick references:
+
 
 ```js
-const getValidIndentationString = require('@wulechuan/get-valid-indentation-string')
+const { getValidIndentationString } = require('@wulechuan/get-valid-indentation-string')
 
 // Throws an error.
 // As neither the provided value nor the fallback value presents.
 tryOneValue()
 
 
-tryOneValue(3)     // 3 spaces: '   '.
-tryOneValue('3')   // 3 spaces: '   '.
-tryOneValue(' 8 ') // 8 spaces: '        '.
+tryOneValue(3)     // Returns 3 spaces: '   '.
+tryOneValue('3')   // Returns 3 spaces: '   '.
+tryOneValue(' 8 ') // Returns 8 spaces: '        '.
 
 
 // Returns 2 spaces: '  '.
@@ -127,7 +129,7 @@ This program provides the only function as its interface. The said function is n
 function getValidIndentationString(
     providedIndentation: any,
     fallbackValue?: string | number,
-    shouldLogDecidedValue?: boolean
+    shouldLogVerbosely?: boolean
 ): string
 ```
 

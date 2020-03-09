@@ -48,10 +48,12 @@ npm  i  @wulechuan/get-valid-indentation-string
 
 ### 具体示例
 
-本项目代码库中自带的 `./test.js` 大致如下。
+本程序提供唯一的函数作为主程序，名为 `getValidIndentationString`。该函数接受三个参数，依次为 `providedIndentaion`、`fallbackValue` 和 `shouldLogVerbosely`。详见下文《[应用编程接口（所谓 API）](#%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B%E6%8E%A5%E5%8F%A3%EF%BC%88%E6%89%80%E8%B0%93-api%EF%BC%89)》。
+
+本项目代码库中自带的 `./test.js` 是较充分的实例代码。其大致如下。
 
 ```js
-const getValidIndentationString = require('@wulechuan/get-valid-indentation-string')
+const { getValidIndentationString } = require('@wulechuan/get-valid-indentation-string')
 
 tryOneValue()      // 会抛出错误，因为“期望值”、“备用值”均不合格。
 tryOneValue(3)     // 采纳三个空格，即'   '。
@@ -114,7 +116,7 @@ function tryOneValue(valueToTry, fallbackValue) {
 function getValidIndentationString(
     providedIndentation: any,
     fallbackValue?: string | number,
-    shouldLogDecidedValue?: boolean
+    shouldLogVerbosely?: boolean
 ): string
 ```
 
