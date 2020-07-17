@@ -5,7 +5,7 @@
 
 ## Multilingual Editions of this Article
 
-- [English version of this ReadMe](./ReadMe.en-US.md)
+- [English version of this ReadMe](./documents/ReadMe.en-US.md)
 
 
 
@@ -73,7 +73,7 @@ tryOneValue('-2',  ' \n ')
 tryOneValue('\t',  '    ')
 
 
-// 采纳四个空格，即'    '。在“繁冗汇报模式”还会在控制台打印“期望值”无效的细节说明。
+// 采纳四个空格，即'    '。因为空格与制表符混用是不允许的。并且，在“繁冗汇报模式”还会在控制台打印“期望值”无效的细节说明。
 tryOneValue(' \t', '    ')
 
 
@@ -89,9 +89,9 @@ tryOneValue('                                                                   
 tryOneValue(true)
 
 
-// 下方代码的期望值有效，汇报采纳，即两个制表符（'\t\t'）。
+// 下方代码的期望值是有效的，会被采纳，即采纳两个制表符（'\t\t'）。
 // 但在被采纳的同时，控制台还会给出一则警告信息，提及制表符多于一个。
-// 不妨思考一下，果真有必要采用超过一个制表符来当做“单级别”缩进吗？
+// 诸君不妨思考一下，果真有必要采用超过一个制表符来当做“单级别”缩进吗？
 tryOneValue('\t\t')
 
 

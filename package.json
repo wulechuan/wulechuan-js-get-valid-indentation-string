@@ -1,34 +1,37 @@
 {
-  "name": "@wulechuan/get-valid-indentation-string",
-  "version": "1.0.4",
-  "author": "wulechuan <wulechuan@live.com>",
-  "description": "This program produces a string that could be used as a single level of indentation in any compute programing language source codes. Or it throws an error if it fails to evaluate such a string. The said string contains either all spaces(spacebar), or all tabs(`'\t'`). But it is not allowed to contain a mix of space and tab.",
-  "license": "WTFPL",
-  "main": "index.js",
-  "scripts": {
-    "test": "node  test.js"
-  },
-  "keywords": [
-    "indentation",
-    "indent",
-    "nunber-of-spaces",
-    "nunber-of-tabs",
-    "缩进字符串",
-    "代码缩进空格数量",
-    "代码缩进配置"
-  ],
-  "dependencies": {
-    "chalk": "^3.0.0"
-  },
-  "devDependencies": {
-    "@wulechuan/css-stylus-markdown-themes": "^6.4.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string.git"
-  },
-  "bugs": {
-    "url": "https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string/issues"
-  },
-  "homepage": "https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string#readme"
+    "name": "@wulechuan/get-valid-indentation-string",
+    "version": "1.0.5",
+    "author": "wulechuan <wulechuan@live.com>",
+    "description": "This program produces a string that could be used as a single level of indentation in any compute programing language source codes. Or it throws an error if it fails to evaluate such a string. The said string contains either all spaces(spacebar), or all tabs(`'\t'`). But it is not allowed to contain a mix of space and tab.",
+    "license": "WTFPL",
+    "main": "index.js",
+    "scripts": {
+        "test": "node  test.js",
+        "start": "npm  test",
+        "before-git-commit": "npm  i    &&    npm  start",
+        "prepublishOnly": "npm                     start"
+    },
+    "keywords": [
+        "indentation",
+        "indent",
+        "nunber-of-spaces",
+        "nunber-of-tabs",
+        "缩进字符串",
+        "代码缩进空格数量",
+        "代码缩进配置"
+    ],
+    "dependencies": {
+        "chalk": "^3.0.0"
+    },
+    "devDependencies": {
+        "@wulechuan/css-stylus-markdown-themes": "^6.4.12"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string.git"
+    },
+    "bugs": {
+        "url": "https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string/issues"
+    },
+    "homepage": "https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string#readme"
 }

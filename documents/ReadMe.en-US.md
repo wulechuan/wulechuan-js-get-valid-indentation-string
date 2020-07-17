@@ -1,11 +1,11 @@
 # Get a Valid String that can be Used as One Level of Indetantion in Source Codes
 
-<link rel="stylesheet" href="./node_modules/@wulechuan/css-stylus-markdown-themes/dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+<link rel="stylesheet" href="../node_modules/@wulechuan/css-stylus-markdown-themes/dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
 
 
 ## Multilingual Editions of this Article
 
-- 《[本文之简体中文版](./ReadMe.md)》
+- 《[本文之简体中文版](../ReadMe.md)》
 
 
 
