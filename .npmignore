@@ -4,6 +4,6 @@
 .gitignore
 node_modules
 documents
-ReadMe.html
+*.html
 test*.js
 git*.sh
