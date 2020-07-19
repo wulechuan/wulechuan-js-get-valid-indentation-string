@@ -74,7 +74,7 @@ tryOneValue(-1,    '  ')
 
 
 // Throws an error.
-// As neither the provided value nor the fallback value presents.
+// As neither the provided value nor the fallback value is valid.
 tryOneValue('-2',  ' \n ')
 
 
@@ -105,8 +105,9 @@ tryOneValue(true)
 
 // It's valid, being 2 tabs: '\t\t'.
 // But a warning message will issue.
-// Think about it: Do we really need multiple tabs
-// for just one level of indentaition?
+// Think about it:
+//     Do we really need multiple tabs
+//     for just one level of indentaition?
 tryOneValue('\t\t')
 
 function tryOneValue(valueToTry, fallbackValue) {
@@ -136,7 +137,7 @@ function getValidIndentationString(
 
 Where
 
--   `providedIndentation` is so-called require. But due to it could be `undefined`, you might also treat it as an optinal one, virtually. Although the value could be any type, including `undefined`, `null`, etc., but only so-called "valid" values are accepted and used. If an invalid value is provided, it's ignored。 Thus the result value falls back to take the `fallbackValue`, which is the second argument of this function.
+-   `providedIndentation` is so-called "*required*". But due to it could be `undefined`, you might also treat it as an optinal one, virtually. Although the value could be any type, including `undefined`, `null`, etc., but only so-called "valid" values are accepted and used. If an invalid value is provided, it's ignored。 Thus the result value falls back to take the `fallbackValue`, which is the second argument of this function.
 
     For more details of what a "valid" value looks like, see below.
 
