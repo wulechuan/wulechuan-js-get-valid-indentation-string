@@ -1,11 +1,11 @@
 # Get a Valid String that can be Used as One Level of Indetantion in Source Codes
 
-<link rel="stylesheet" href="../node_modules/@wulechuan/css-stylus-markdown-themes/dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+<link rel="stylesheet" href="../../node_modules/@wulechuan/css-stylus-markdown-themes/源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
 
 
 ## Multilingual Editions of this Article
 
-- 《[本文之简体中文版](../ReadMe.md)》
+- 《[本文之简体中文版](../../ReadMe.md)》
 
 
 
@@ -124,18 +124,21 @@ function tryOneValue(valueToTry, fallbackValue) {
 
 #### The Main Function
 
-This program provides the only function as its interface. The said function is named `getValidIndentationString`. And its signature is:
+This program provides the only function as its interface. The said function is named `getValidIndentationString`.
+
+
+##### The Main Function Signature
 
 ```ts
 function getValidIndentationString(
     providedIndentation: any,
-    fallbackValue?: string | number,
+    fallbackValue?:      string | number,
     shouldLogVerbosely?: boolean
 ): string
 ```
 
 
-Where
+##### Arguments of the Main Function 
 
 -   `providedIndentation` is so-called "*required*". But due to it could be `undefined`, you might also treat it as an optinal one, virtually. Although the value could be any type, including `undefined`, `null`, etc., but only so-called "valid" values are accepted and used. If an invalid value is provided, it's ignored。 Thus the result value falls back to take the `fallbackValue`, which is the second argument of this function.
 
@@ -154,34 +157,39 @@ Where
     -   If the `providedIndentation` is invalid, then no matter the `fallbackValue` is valid or not, this program will print some details about why the `providedIndentaion` is invalid in the Nodejs console.
 
 
-> **IMPORTANT: If both `providedIndentation` and `fallbackValue` are invalid, this program throws an error and halt!**
+> **IMPORTANT: If neither `providedIndentation` nor `fallbackValue` is valid, this program throws an error and halt!**
 
 
 
-#### Valid Values
+##### What Kind of Value is Valid?
 
--   A number, as long as the `Math.round` result of the number, is larger than `0` and less than or equal to `50` . And this number is treated as the count of spaces(spacebar) used as a single level of indentation.
+A valid value meets any requirement among these:
 
--   A string whose content is a number of above. And the effect is the same as above.
+-   Being a number, as long as the `Math.round` result of the number, is larger than `0` and less than or equal to `50` . And this number is treated as the count of spaces(spacebar) used as a single level of indentation.
 
--   A string contains nothing but spaces(spacebar), as long as the count of the spaces is no less than `1` and no more than `50`. Which also means both a single space and 50 spaces are valid.
+-   Being a string, whose content is a number of above. And the effect is the same as above.
 
--   A string contains nothing but tabs(`'\t'`), as long as the count of the tabs is no less than `1` and no more than `16`. Which also means both a single tab and 16 tabs are valid.
+-   Being a string, contains nothing but spaces(spacebar), as long as the count of the spaces is no less than `1` and no more than `50`. Which also means both a single space and 50 spaces are valid.
+
+-   Being a string, contains nothing but tabs(`'\t'`), as long as the count of the tabs is no less than `1` and no more than `16`. Which also means both a single tab and 16 tabs are valid.
 
     > But if the count of tabs is more than 1, then a warning message issues. As generally we don't need multiple tabs for a single level of indentation.
 
 
 Below are examples of some valid values:
 
-`4`、`'4'`、`' 4  '`、`' '`、`" "`、`'      '`、`'\t'`、`"\t"`、`'\t\t'`。
+
+-   `4`
+-   `'4'`
+-   `' 4  '`
+-   `' '`
+-   `" "`
+-   `'      '`
+-   `'\t'`
+-   `"\t"`
+-   `'\t\t'`
 
 
+##### Return Value
 
----
-
-## TODOs
-
--   Nothing at present.
-
-
-
+This function always returns a string. If neither argument is valid, this function doesn't return at all. Instead, it throws an error.

@@ -1,11 +1,17 @@
 # 获取有效的代码缩进字符串
 
-<link rel="stylesheet" href="./node_modules/@wulechuan/css-stylus-markdown-themes/dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+<link rel="stylesheet" href="./node_modules/@wulechuan/css-stylus-markdown-themes/源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+
+
+> 中国人——特别是汉族人，理应坚持广泛、规范地使用汉语。凡非必要之情形不说外国话、不用外国字。此乃天经地义！然则每当必要，亦不排斥采用外国之语言。不妨 **博世界之学问，养中国之精神** 。
+>
+> 本人亦支持少数民族坚持采用自己民族的传统语言。仍须强调，凡中国人，皆应会用汉语、积极使用汉语，此乃中华各民族之大一统之必由。
+
 
 
 ## Multilingual Editions of this Article
 
-- [English version of this ReadMe](./documents/ReadMe.en-US.md)
+- [English edition of this ReadMe](./文档集/说明书/ReadMe.en-US.md)
 
 
 
@@ -27,13 +33,28 @@
 
 
 
+## 源代码仓库
+
+| <span style="display:inline-block;width:180px;">提供仓库服务之组织</span> | <span style="display:inline-block;width:150px;">仓库组织之国别</span> | 仓库地址 |
+| ------------- | :----------: | ------- |
+| 码云           | 中华人民共和国 | [https://gitee.com/nanchang-wulechuan/wulechuan-js-get-valid-indentation-string.git](https://gitee.com/nanchang-wulechuan/wulechuan-js-get-valid-indentation-string.git) |
+| 阿里云之代码仓库 | 中华人民共和国 | [https://code.aliyun.com/wulechuan/wulechuan-js-get-valid-indentation-string.git](https://code.aliyun.com/wulechuan/wulechuan-js-get-valid-indentation-string.git) |
+| GitHub         | 美           | [https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string.git](https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string.git) |
+
+
+
+## 版本断代提醒
+
+-   本工具自 `v2.0.0` 版始，*源带码文件夹*、*测试集文件夹*、*源代码接口*、*控制台消息文本* 均已汉化。虽然旧的英语版接口得以保留，单从编程角度而言，版本并不“断代”，但因文件夹和消息文本仅采用汉语，故对于不识汉语之开发者而言，形同“版本断代”。
+
+
 ## 简介
 
 ### 功用
 
 该程序用于获取一个字符串，用于计算机源代码缩进。该字符串要么全是“空格”（`' '`），要么全是“制表符”（`'\t'`），但二者不可混用。并且，多于一个制表符是允许的，但本程序会给出警告信息。因为，一般的，我们仅需采用单一制表符。
 
-> 注意，本程序故意未提供所谓“默认值”。因此，本程序既不迎合喜欢采用“制表符”的程序员们，也不迎合喜欢采用“两个空格”的程序员们，也不迎合我本人喜欢的“四个空格”的风格。调用本程序时，必须明确给出一个所谓“后备值”，或者说“默认值”。
+> 注意，本程序故意未提供所谓“默认值”。因此，本程序既不迎合喜欢采用“制表符”的程序员们，也不迎合喜欢采用“两个空格”的程序员们，也不迎合我本人喜欢的“四个空格”的风格。调用本程序时，如果对外界提供的“期望值”不信任，则必须明确给出一个所谓“后备值”，或者说“默认值”。
 
 
 
@@ -48,59 +69,81 @@ npm  i  @wulechuan/get-valid-indentation-string
 
 ### 具体示例
 
-本程序提供唯一的函数作为主程序，名为 `getValidIndentationString`。该函数接受三个参数，依次为 `providedIndentaion`、`fallbackValue` 和 `shouldLogVerbosely`。详见下文《[应用编程接口（所谓 API）](#%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B%E6%8E%A5%E5%8F%A3%EF%BC%88%E6%89%80%E8%B0%93-api%EF%BC%89)》。
+本工具仅提供唯一的函数作为所谓“*主程序*”，但故意给出汉语、英语两种名称。二者互为别名，效用完全对等。
 
-本项目代码库中自带的 `./test.js` 是较充分的实例代码。其大致如下。
+其汉语名称为 `求可靠的用于计算机源代码缩进的空白文本`。该函数接受三个参数，详见下文《[应用编程接口（所谓 API）](#%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B%E6%8E%A5%E5%8F%A3%EF%BC%88%E6%89%80%E8%B0%93-api%EF%BC%89)》。
+
+本项目代码库中自带的 `./测试集/index.js` 是较充分的示范代码。摘抄如下（有所精简）。
 
 ```js
-const { getValidIndentationString } = require('@wulechuan/get-valid-indentation-string')
+const { 求可靠的用于计算机源代码缩进的空白文本 } = require('@wulechuan/get-valid-indentation-string')
 
-tryOneValue()      // 会抛出错误，因为“期望值”、“备用值”均不合格。
-tryOneValue(3)     // 采纳三个空格，即'   '。
-tryOneValue('3')   // 采纳三个空格，即'   '。
-tryOneValue(' 8 ') // 采纳八个空格，即'        '。
+试一把()      // 会抛出错误，因为“期望值”、“备用值”均不合格。
+试一把(3)     // 采纳三个空格，即'   '。
+试一把('3')   // 采纳三个空格，即'   '。
+试一把(' 8 ') // 采纳八个空格，即'        '。
+
 
 
 // 采纳两个空格，即'  '。在“繁冗汇报模式”还会在控制台打印“期望值”无效的细节说明。
-tryOneValue(-1,    '  ')
+试一把(-1,    '  ')
+
 
 
 // 会抛出错误，因为“期望值”、“备用值”均不合格。
-tryOneValue('-2',  ' \n ')
+试一把('-2',  ' \n ')
+
 
 
 // 采纳一个制表符，即'\t'。
-tryOneValue('\t',  '    ')
+试一把('\t',  '    ')
+
 
 
 // 采纳四个空格，即'    '。因为空格与制表符混用是不允许的。并且，在“繁冗汇报模式”还会在控制台打印“期望值”无效的细节说明。
-tryOneValue(' \t', '    ')
+试一把(' \t', '    ')
+
 
 
 // 采纳两个空格，即'  '。
-tryOneValue('',    '  ')
+试一把('',    '  ')
+
 
 
 // 会抛出错误，因为“期望值（六十七个空格）”太长了，超出限度，同时“备用值”又未给出。
-tryOneValue('                                                                   ')
+试一把(' '.repeat(67))
 
 
-// 会抛出错误，因为“期望值”不允许设置为布尔值，同时“备用值”又未给出。
-tryOneValue(true)
+
+// 会抛出错误，因为不允许采用布尔值，同时“备用值”又未给出。
+试一把(true)
+
 
 
 // 下方代码的期望值是有效的，会被采纳，即采纳两个制表符（'\t\t'）。
 // 但在被采纳的同时，控制台还会给出一则警告信息，提及制表符多于一个。
 // 诸君不妨思考一下，果真有必要采用超过一个制表符来当做“单级别”缩进吗？
-tryOneValue('\t\t')
+试一把('\t\t')
 
 
 
-function tryOneValue(valueToTry, fallbackValue) {
+// 会抛出错误，因为不允许空格与制表符混用，同时“备用值”又未给出。
+试一把(' \t')
+
+
+
+function 试一把 (期望采用的缩进空白之配置, 保险的备用配置) {
     try {
-        getValidIndentationString(valueToTry, fallbackValue, true)
-    } catch(e) {
-        console.log(e.message)
+
+        // 请留意下方的函数调用语句。
+        求可靠的用于计算机源代码缩进的空白文本(
+            期望采用的缩进空白之配置,
+            保险的备用配置,
+            true
+        )
+
+    } catch(错误之记载) {
+        console.log(错误之记载.message)
     }
 }
 ```
@@ -110,36 +153,61 @@ function tryOneValue(valueToTry, fallbackValue) {
 
 #### 主函数
 
-本工具提供唯一的函数用于，名为 `getValidIndentationString`。该函数之签名（Signature）如下：
+本工具仅提供唯一的函数作为对外接口，但故意给出汉语、英语两种名称。二者互为别名，效用完全对等。
+
+
+
+##### 主函数之接口全貌（外国话所谓 Signature）
+
 
 ```ts
-function getValidIndentationString(
+function 求可靠的用于计算机源代码缩进的空白文本 (
+    期望采用的缩进空白配置:  any,
+    保险的备用缩进空白配置?: string | number,
+    应在控制台记录运行细节?: boolean
+): string
+
+function getValidIndentationString (
     providedIndentation: any,
-    fallbackValue?: string | number,
+    fallbackValue?:      string | number,
     shouldLogVerbosely?: boolean
 ): string
 ```
 
 
-其中：
+##### 主函数之入口参数
 
--   `providedIndentation` 该值不能省略，可以是任何值，但仅有效并会被采纳为最终决定的值，无效值不被采纳。当该值无效时，本程序转而尝试采用 `fallbackValue` 的值。所谓“有效”的值，参见下文。
+###### `期望采用的缩进空白配置`（`providedIndentation`）
 
+该值不能省略。可以取任何值，但仅当值有效时会被采纳，无效值不被采纳。当该值无效时，主函数转而尝试采用 `保险的备用缩进空白配置`（`fallbackValue`） 的值。
 
--   `fallbackValue`，该值可以省略，其取值可以是任何值，但仅有效并会被采纳为最终决定的值，无效值不被采纳。所谓“有效”的值，参见下文。
-
-
--   `shouldLogVerbosely`，该值可以省略。其取值可以是任意值，但会被视作布尔值。当该值为“真性（truthy）”时：
-
-    -   如果本程序最终采纳了一个有效值，将在 Nodejs 的控制台打印出最终采纳的值，供人类审阅。
-    -   如果给出的原始值有任何错误，那么，不论本程序最终是否（借助“后备值”）得到一个有效值，均会在 Nodejs 的控制台打印出与原始值相关的错误信息。
+> 所谓“有效”的值，参见下文《[主函数中的两个主要参数取怎样的值算是有效值？](#主函数中的两个主要参数取怎样的值算是有效值？)》一节。
 
 
-> **注意：如果 `providedIndentation`  和 `fallbackValue` 均无效，则本程序故意抛出错误！**
+###### `保险的备用缩进空白配置`（`fallbackValue`）
+
+该值可以省略。如果 `期望采用的缩进空白配置` 一值无效，主函数才会考察本值（即指 `保险的备用缩进空白配置`）。虽然本值可传入任何值，但仅当值有效时会被采纳。如果本值被判无效，则主函数抛出错误。
+
+> 所谓“有效”的值，参见下文《[主函数中的两个主要参数取怎样的值算是有效值？](#主函数中的两个主要参数取怎样的值算是有效值？)》一节。
+
+
+###### `应在控制台记录运行细节`（`shouldLogVerbosely`）
+
+该值可以省略。其取值可以是任意值，但会被视作布尔值。当该值为“真性（truthy）”时：
+
+-   如果主函数最终采纳了一个有效值，则会在控制台打印出最终采纳的值，供人类审阅。
+-   如果给出的原始值有任何错误，那么，不论本程序最终是否（借助“后备值”）得到一个有效值，均会在控制台打印出与原始值相关的错误信息。
+
+
+> 注意
+>
+> 若传入的 `期望采用的缩进空白配置` 和 `保险的备用缩进空白配置` 均无效，则**本程序抛出错误。**
 
 
 
-#### 有效的值
+##### 主函数中的两个主要参数取怎样的值算是有效值？
+
+所谓有效的值，应符合以下规则之任一：
 
 -   四舍五入后大于 `0` 且小于等于 `50` 的数字值。视作用于代码缩进**一级**所采用的空格之个数。
 
@@ -150,16 +218,20 @@ function getValidIndentationString(
 -   一个**仅**包含**制表符**的字符串，其中的制表符数量不少于 `1` 且不多于 `16`（可以等于 `1`，可以等于 `16`）。但仅推荐采用单一制表符。一般情况我认为根本没必要使用两个或更多制表符。
 
 
-以枚举（但不穷举）一些有效值：
+以下枚举（但不穷举）一些有效值：
 
-`4`、`'4'`、`' 4  '`、`' '`、`" "`、`'      '`、`'\t'`、`"\t"`、`'\t\t'`。
+-   `4`、
+-   `'4'`、
+-   `' 4  '`、
+-   `' '`、
+-   `" "`、
+-   `'      '`、
+-   `'\t'`、
+-   `"\t"`、
+-   `'\t\t'`。
 
 
----
+##### 主函数之返回值
 
-## 未来计划
-
--   暂无。
-
-
+该函数总是返回一个`字符串`值。如果输入不合规，该函数并不作返回，而是故意抛出错误。
 

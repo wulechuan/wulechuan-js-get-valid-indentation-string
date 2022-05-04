@@ -1,34 +1,28 @@
 {
     "name": "@wulechuan/get-valid-indentation-string",
-    "version": "1.0.9",
-    "author": "wulechuan <wulechuan@live.com>",
-    "description": "This program produces a string that could be used as a single level of indentation in any compute programing language source codes. Or it throws an error if it fails to evaluate such a string. The said string contains either all spaces(spacebar), or all tabs(`'\t'`). But it is not allowed to contain a mix of space and tab.",
+    "version": "2.0.0",
+    "author": "吴乐川 <wulechuan@live.com>",
     "license": "WTFPL",
-    "main": "index.js",
+    "description": "此为吴乐川的《获取计算机源代码单级缩进空白的工具》。该程序可按需给出一个字符串，用于计算机源代码之单级缩进。该字符串要么全是“空格”（`' '`），要么全是“制表符”（`'\t'`），但二者不可混用。并且，多于一个制表符是允许的，但本程序会给出警告信息。因为，一般的，我们仅需采用单一制表符。",
+    "main": "源代码/index.js",
+    "types": "源代码/index.d.ts",
     "scripts": {
-        "remove-all-html-docs": "rimraf  ./ReadMe.html  ./documents/**/*.html",
-        "generate-html-docs": "npm  run  remove-all-html-docs    &&    wlc-md-to-html  -i ./*.md,./documents/**/*.md  -E3  -C ./documents/wlc-md-to-html.config.js  --to '*'",
-        "test": "node  test.js",
+        "remove-all-html-docs": "rimraf  ./ReadMe.html  ./文档集/**/*.html",
+        "generate-html-docs": "npm  run  remove-all-html-docs    &&    wlc-md-to-html  -i ./*.md,./文档集/**/*.md  -E3  -C ./文档集/wlc-md-to-html.config.js  --to '*'",
+        "test": "node  测试集/index.js",
         "start": "npm  test",
-        "before-git-commit": "npm  i                &&    npm  start",
+        "每当制作集得之版本之前": "npm  i              &&    npm  start",
         "prepublishOnly": "rimraf  ./ReadMe.html    &&    npm  start"
     },
-    "keywords": [
-        "indentation",
-        "indent",
-        "nunber-of-spaces",
-        "nunber-of-tabs",
-        "缩进字符串",
-        "代码缩进空格数量",
-        "代码缩进配置"
-    ],
     "dependencies": {
-        "chalk": "^3.0.0"
+        "chalk": "^4.1.2"
     },
     "devDependencies": {
-        "@wulechuan/css-stylus-markdown-themes": "^6.4.12",
+        "@wulechuan/cli-scripts--git-push": "^2.0.3",
+        "@wulechuan/css-stylus-markdown-themes": "^7.6.2",
         "rimraf": "^3.0.2"
     },
+    "homepage": "https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string#readme",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string.git"
@@ -36,5 +30,24 @@
     "bugs": {
         "url": "https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string/issues"
     },
-    "homepage": "https://github.com/wulechuan/wulechuan-js-get-valid-indentation-string#readme"
+    "keywords": [
+        "缩进",
+        "缩进的空白",
+        "缩进字符串",
+        "缩进的字符串",
+        "缩进空格数",
+        "缩进空格数量",
+        "缩进配置",
+        "代码缩进",
+        "代码缩进的空白",
+        "代码缩进字符串",
+        "代码缩进的字符串",
+        "代码缩进空格数",
+        "代码缩进空格数量",
+        "代码缩进配置",
+        "indentation",
+        "indent",
+        "number-of-spaces",
+        "number-of-tabs"
+    ]
 }
