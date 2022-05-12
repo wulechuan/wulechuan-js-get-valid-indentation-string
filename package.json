@@ -18,7 +18,7 @@
         "chalk": "^4.1.2"
     },
     "devDependencies": {
-        "@wulechuan/cli-scripts--git-push": "^3.0.3",
+        "@wulechuan/cli-scripts--git-push": "^3.0.4",
         "@wulechuan/css-stylus-markdown-themes": "^7.8.1",
         "rimraf": "^3.0.2"
     },
